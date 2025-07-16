@@ -1,5 +1,6 @@
 package com.sahu.sagachoreography.order.service.util;
 
+import com.sahu.sagachoreography.common.dto.OrderRequestDTO;
 import com.sahu.sagachoreography.common.dto.OrderResponseDTO;
 import com.sahu.sagachoreography.order.entity.Order;
 import lombok.experimental.UtilityClass;
@@ -8,6 +9,15 @@ import java.util.List;
 
 @UtilityClass
 public class OrderUtil {
+
+    public Order toOrder(OrderRequestDTO orderRequestDTO) {
+        return Order.builder()
+                .price(orderRequestDTO.price())
+                .quantity(orderRequestDTO.quantity())
+                .userId(orderRequestDTO.userId())
+                .productId(orderRequestDTO.productId())
+                .build();
+    }
 
     public OrderResponseDTO orderResponseDTO(Order order) {
         return  OrderResponseDTO.builder()

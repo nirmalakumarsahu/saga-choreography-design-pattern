@@ -6,6 +6,8 @@ import com.sun.jdi.LongValue;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Setter
 @Getter
 @Builder
@@ -13,6 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 
 @Entity
+@Table(name = "saga_choreography_order")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,7 +23,7 @@ public class Order {
     private Long productId;
     private Long userId;
     private Integer quantity;
-    private Double price;
+    private BigDecimal price;
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
     @Enumerated(EnumType.STRING)

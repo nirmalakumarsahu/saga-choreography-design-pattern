@@ -20,7 +20,7 @@ public class EventConsumer {
     private final EventProducer eventProducer;
 
     public void consumePaymentEvent(PaymentEvent paymentEvent) {
-        orderRepository.findById(paymentEvent.getPaymentResponseDTO().id())
+        orderRepository.findById(paymentEvent.getPaymentResponseDTO().orderId())
                 .ifPresent(order -> {
                     updateOrderStatus(order, paymentEvent.getPaymentResponseDTO());
                 });

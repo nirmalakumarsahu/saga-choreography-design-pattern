@@ -1,10 +1,10 @@
 # Server Configuration
 server:
-  port: 8787
+  port: 8788
 
 spring:
   application:
-    name: order-service
+    name: payment-service
 
   #MySQL Configuration
   datasource:
@@ -35,20 +35,20 @@ spring:
   cloud:
     # Function configuration
     function:
-      definition: orderEventProducer; paymentEventConsumer
+      definition: orderEventConsumerPaymentEventProducer
 
     stream:
-      # Bindings for Kafka Streams
-      bindings:
-        orderEventProducer-out-0:
-          destination: ${stream.topics.order-event}
-        paymentEventConsumer-in-0:
-          destination: ${stream.topics.product-event}
-
       # Kafka Server Configuration
       kafka:
         binder:
           brokers: localhost:9092
+
+      # Bindings for Kafka Streams
+      bindings:
+        orderEventConsumerPaymentEventProducer-in-0:
+          destination: ${stream.topics.order-event}
+        orderEventConsumerPaymentEventProducer-out-0:
+          destination: ${stream.topics.product-event}
 
 # Actuator Configuration
 management:

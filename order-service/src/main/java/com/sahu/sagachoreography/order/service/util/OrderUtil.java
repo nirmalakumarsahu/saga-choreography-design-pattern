@@ -1,5 +1,6 @@
 package com.sahu.sagachoreography.order.service.util;
 
+import com.sahu.sagachoreography.common.constant.OrderStatus;
 import com.sahu.sagachoreography.common.dto.OrderRequestDTO;
 import com.sahu.sagachoreography.common.dto.OrderResponseDTO;
 import com.sahu.sagachoreography.order.entity.Order;
@@ -16,6 +17,7 @@ public class OrderUtil {
                 .quantity(orderRequestDTO.quantity())
                 .userId(orderRequestDTO.userId())
                 .productId(orderRequestDTO.productId())
+                .orderStatus(OrderStatus.ORDER_CREATED)
                 .build();
     }
 

@@ -20,10 +20,9 @@ public class EventProducer {
             OrderEvent orderEvent = new OrderEvent(orderResponseDTO);
 
             // Publish the event to the sink
-            orderEventSink.tryEmitNext(orderEvent)
-                    .orThrow(); // This will throw an exception if the sink is full or closed
+            orderEventSink.tryEmitNext(orderEvent);
 
-            log.info("OrderEvent published successfully for order: {}", orderResponseDTO.id());
+            log.info("OrderEvent ready for publish: {}", orderResponseDTO.id());
         }
         catch (Exception e) {
             log.error("Failed to publish OrderEvent for order: {}. Error: {}", orderResponseDTO.id(), e.getMessage());

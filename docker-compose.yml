@@ -48,7 +48,7 @@ services:
   # MySQL Container Configuration
   mysql:
     image: mysql:latest
-    container_name: mysql_container
+    container_name: mysql_ms
     ports:
       - "3307:3306"
     environment:

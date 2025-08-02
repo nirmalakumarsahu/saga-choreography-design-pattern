@@ -1,6 +1,5 @@
 package com.sahu.sagachoreography.common.event;
 
-import com.sahu.sagachoreography.common.dto.OrderResponseDTO;
 import com.sahu.sagachoreography.common.dto.PaymentResponseDTO;
 import lombok.*;
 

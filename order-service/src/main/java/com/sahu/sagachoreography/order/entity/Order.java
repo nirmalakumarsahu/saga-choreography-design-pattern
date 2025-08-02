@@ -2,7 +2,6 @@ package com.sahu.sagachoreography.order.entity;
 
 import com.sahu.sagachoreography.common.constant.OrderStatus;
 import com.sahu.sagachoreography.common.constant.PaymentStatus;
-import com.sun.jdi.LongValue;
 import jakarta.persistence.*;
 import lombok.*;
 

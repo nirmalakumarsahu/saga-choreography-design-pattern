@@ -9,8 +9,8 @@ spring:
   #MySQL Configuration
   datasource:
     url: jdbc:mysql://localhost:3307/microservices
-    username: nirmala
-    password: nirmala@123
+    username: ${MYSQL_USER:nirmala}
+    password: ${MYSQL_PASSWORD:nirmala@123}
 
     # HikariCP Connection Pool Configuration
     hikari:

@@ -88,9 +88,9 @@ public class PaymentServiceImpl implements PaymentService {
                             userTransactionRepository.delete(userTransaction);
 
                             userBalanceRepository.findById(userTransaction.getUserId())
-                                    .ifPresent(userBalance -> {
-                                        userBalance.setBalance(userBalance.getBalance().add(userTransaction.getAmount()));
-                                    });
+                                    .ifPresent(userBalance ->
+                                        userBalance.setBalance(userBalance.getBalance().add(userTransaction.getAmount()))
+                                    );
                         });
     }
 
